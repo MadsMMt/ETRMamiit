@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sty.css">
+    <link rel="stylesheet" href="invF.css">
+    <title>Investment Performance</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        table {
+            border: 2px solid black;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <button class="btn btn-outline-secondary" id="mode-toggle">Dark Mode/Light Mode</button>
+                <h1>Investment Performance</h1>
+                <form id="investment-form">
+                    <label for="initial-investment">Initial Investment:</label>
+                    <input type="number" id="initial-investment" required>
+                    <label for="current-value">Current Value:</label>
+                    <input type="number" id="current-value" required>
+                    <br>
+                    <br>
+                    <button type="submit">Calculate Performance</button>
+                </form>
+                <div id="performance-result"></div>
+                <div id="performance-caption"></div>
+                <script>
+                    function toggleMode() {
+                        const body = document.querySelector('body');
+                        body.classList.toggle('dark-mode');
+                    }
+                    // Add event listener to the mode toggle button
+                    const modeToggleBtn = document.querySelector('#mode-toggle');
+                    modeToggleBtn.addEventListener('click', toggleMode);
+                </script>
+                <script src="investment-performance.js"></script>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
